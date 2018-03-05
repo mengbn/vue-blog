@@ -32,42 +32,17 @@
             <a class="navbar-brand" href="http://leanote.leanote.com">
 
               <img src="http://leanote.com/public/upload/520/52d26b4e99c37b609a000001/images/logo/2e8a1c7fe014112ec803716da583e0aa.jpeg" title="Leanote官方博客">
-
               猛哥博客
-
             </a>
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-
-              <li class="active"><a href="http://leanote.leanote.com">主页</a></li>
-
+              <li class="active"><router-link to="/">主页</router-link></li>
               <li class="">
-                <a href="http://leanote.leanote.com/cate/latest">Latest</a>
+                <router-link to="/archives">归档</router-link>
               </li>
               <li class="">
-                <a href="http://leanote.leanote.com/cate/news">NEWS</a>
-              </li>
-              <li class="">
-                <a href="http://leanote.leanote.com/cate/leantote-manual">Leantote manual</a>
-              </li>
-              <li class="">
-                <a href="http://leanote.leanote.com/cate/leanote-activity">leanote活动</a>
-              </li>
-              <li class="">
-                <a href="http://leanote.leanote.com/cate/Leanote-Dev">Leanote Dev</a>
-              </li>
-              <li class="">
-                <a href="http://leanote.leanote.com/cate/%E5%85%AC%E5%91%8A">公告</a>
-              </li>
-              <li class="">
-                <a href="http://leanote.leanote.com/single/About-Me">About</a>
-              </li>
-              <li class="">
-                <a href="http://leanote.leanote.com/archives">归档</a>
-              </li>
-              <li class="">
-                <a href="http://leanote.leanote.com/tags">标签</a>
+                <router-link to="/tags">标签</router-link>
               </li>
             </ul>
             <form class="navbar-form navbar-right" id="search" onsubmit="search(event);return false;">
