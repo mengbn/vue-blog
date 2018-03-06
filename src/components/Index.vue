@@ -1,10 +1,11 @@
 <template>
+
   <div id="posts">
     <div class="each-post">
       <div class="title">
-        <a href="http://leanote.leanote.com/post/Leanote-Desktop-v2.6-released" title="全文">
+        <router-link to="/info">
           Leanote Desktop v2.6 released 蚂蚁笔记桌面端2.6发布
-        </a>
+        </router-link>
       </div>
       <div class="created-time">
         <i class="fa fa-clock-o"></i> 2017-12-01 12:08:14
