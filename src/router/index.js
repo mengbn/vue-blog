@@ -8,6 +8,7 @@ export const RoutersMap = [
   {
     path: '/',
     component: HomeLayout,
+    redirect: 'blog',
     children: [{
       path: '/blog',
       component: Index,
