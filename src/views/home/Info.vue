@@ -1,4 +1,5 @@
 <template>
+  <div id="postsContainer">
   <div id="posts">
     <div class="each-post">
       <div class="title">
@@ -107,15 +108,11 @@
       </div>
     </div>
   </div>
+    </div>
 </template>
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  name: 'Info'
 }
 </script>
 <style>

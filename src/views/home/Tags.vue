@@ -1,4 +1,5 @@
 <template>
+  <div id="postsContainer">
   <div id="posts">
     <div class="container">
       <h2>分类 - Latest</h2>
@@ -24,14 +25,10 @@
       </div>
     </div>
   </div>
+    </div>
 </template>
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  name: 'Tags'
 }
 </script>
