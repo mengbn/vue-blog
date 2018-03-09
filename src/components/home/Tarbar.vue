@@ -11,7 +11,7 @@
             </div>
 
             <div>
-              猛哥博客
+              开源博客系统
             </div>
           </a>
         </h1>
@@ -32,7 +32,7 @@
           <a class="navbar-brand" href="http://leanote.leanote.com">
 
             <img src="http://leanote.com/public/upload/520/52d26b4e99c37b609a000001/images/logo/2e8a1c7fe014112ec803716da583e0aa.jpeg" title="Leanote官方博客">
-            猛哥博客
+            开源博客系统
           </a>
         </div>
         <div class="navbar-collapse collapse">

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HomeLayout from '@/components/home/Tarbar'
 import Index from '@/views/home/index'
 import Tags from '@/views/home/Tags'
+import Info from '@/views/home/Info'
 Vue.use(Router)
 export const RoutersMap = [
   {
@@ -12,18 +13,19 @@ export const RoutersMap = [
     children: [{
       path: '/blog',
       component: Index,
-      name: 'Index',
-      meta: { title: 'index', icon: 'index', noCache: true }
+      name: 'Index'
     }, {
       path: '/archives',
       component: Tags,
-      name: 'Index',
-      meta: { title: 'index', icon: 'index', noCache: true }
+      name: 'Tags'
     }, {
       path: '/tags',
       component: Tags,
-      name: 'Index',
-      meta: { title: 'index', icon: 'index', noCache: true }
+      name: 'Tags'
+    }, {
+      path: '/info',
+      component: Info,
+      name: 'Info'
     }]
   }
 ]
