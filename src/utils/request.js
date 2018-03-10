@@ -5,15 +5,14 @@ import jsonp from 'jsonp'
 import lodash from 'lodash'
 import pathToRegexp from 'path-to-regexp'
 import { Message } from 'element-ui'
-import { CORS } from './config'
+import { YQL, CORS } from './config'
 const fetch = (options) => {
   let {
     method = 'get',
     data,
     fetchType,
-    url,
+    url
   } = options
-
   const cloneData = lodash.cloneDeep(data)
   try {
     let domin = ''
@@ -34,14 +33,14 @@ const fetch = (options) => {
       message: e.message,
       type: 'error',
       duration: 5 * 1000
-    });
+    })
   }
   if (fetchType === 'JSONP') {
     return new Promise((resolve, reject) => {
       jsonp(url, {
         param: `${qs.stringify(data)}&callback`,
         name: `jsonp_${new Date().getTime()}`,
-        timeout: 4000,
+        timeout: 4000
       }, (error, result) => {
         if (error) {
           reject(error)
@@ -57,15 +56,15 @@ const fetch = (options) => {
   switch (method.toLowerCase()) {
     case 'get':
       return axios.get(url, {
-        params: cloneData,
+        params: cloneData
       })
     case 'delete':
       return axios.delete(url, {
-        data: cloneData,
+        data: cloneData
       })
     case 'post':
-      //跨域要在服务器端保存一个session ,然后跨域需要加参数
-      return axios.post(url, cloneData,{withCredentials:true})
+      // 跨域要在服务器端保存一个session ,然后跨域需要加参数
+      return axios.post(url, cloneData, {withCredentials: true})
     case 'put':
       return axios.put(url, cloneData)
     case 'patch':
@@ -94,14 +93,14 @@ export default function request (options) {
     let data = options.fetchType === 'YQL' ? response.data.query.results.json : response.data
     if (data instanceof Array) {
       data = {
-        list: data,
+        list: data
       }
     }
     return Promise.resolve({
       success: true,
       message: statusText,
       statusCode: status,
-      ...data,
+      ...data
     })
   }).catch((error) => {
     const { response } = error
@@ -115,6 +114,7 @@ export default function request (options) {
       statusCode = 600
       msg = error.message || 'Network Error'
     }
-    return Promise.reject({ success: false, statusCode, message: msg })
+    return Promise.reject(new Error({ success: false, statusCode, message: msg }))
+    // return Promise.reject({ success: false, statusCode, message: msg })
   })
 }

@@ -8,6 +8,7 @@ import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
+import store from './store'
 router.beforeEach((to, from, next) => {
   NProgress.start() // start progress bar
   next()
@@ -19,5 +20,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

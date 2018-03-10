@@ -61,7 +61,10 @@
 <script>
 import 'bootstrap/dist/js/bootstrap.min.js'
 export default {
-  name: 'Tarbar'
+  name: 'Tarbar',
+  created: function () {
+    this.$store.dispatch('getMenus')
+  }
 }
 </script>
 <style>
