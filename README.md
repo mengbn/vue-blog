@@ -21,40 +21,6 @@ npm run build --report
 ## 目录介绍
 
 ```
-.
-├── build
-│   ├── build.js
-│   ├── check-versions.js
-│   ├── logo.png
-│   ├── utils.js
-│   ├── vue-loader.conf.js
-│   ├── webpack.base.conf.js
-│   ├── webpack.dev.conf.js
-│   └── webpack.prod.conf.js
-├── config
-│   ├── dev.env.js
-│   ├── index.js
-│   └── prod.env.js
-├── index.html
-├── package.json
-├── package-lock.json
-├── README.md
-├── src
-│   ├── App.vue
-│   ├── assets
-│   │   ├── images
-│   │   └── logo.png
-│   ├── components
-│   │   ├── home
-│   │   └── user
-│   ├── main.js
-│   ├── router
-│   │   └── index.js
-│   ├── service
-│   └── views
-│       ├── home
-│       ├── login
-│       └── user
-└── static
+
 
 ```

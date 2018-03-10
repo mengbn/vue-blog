@@ -1,6 +1,5 @@
 // 在 mock 模式下的值是'/api/v1'
 const APIURL = '/aip/v1'
-
 module.exports = {
   name: '开源博客系统',
   prefix: 'blog',
@@ -14,7 +13,6 @@ module.exports = {
     expiredays: 3600
   },
   api: {
-    userLogin: `${APIURL}/login/index`,
-    menus: `${APIURL}/login/index`
+    menus: `${APIURL}/menus/index`
   }
 }
