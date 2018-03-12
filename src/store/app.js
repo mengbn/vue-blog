@@ -7,10 +7,12 @@ const app = {
     token: '11'
   },
   mutations: {
+
   },
   actions: {
     getMenus ({ commit, state }) {
-      getMenu(state.token)
+      const data = getMenu(state.token)
+      data.then(function (result) { console.log(result) })
     }
   }
 }

@@ -1,5 +1,5 @@
 // 在 mock 模式下的值是'/api/v1'
-const APIURL = '/aip/v1'
+const APIURL = '/mock'
 module.exports = {
   name: '开源博客系统',
   prefix: 'blog',
