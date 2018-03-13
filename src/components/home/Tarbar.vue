@@ -4,7 +4,7 @@
     <div id="headerContainer" class="container">
       <div id="header">
         <h1>
-          <a href="http://leanote.leanote.com" id="logo">
+          <a href="javascript:void(0);" id="logo">
 
             <div class="blog-logo">
               <img src="http://leanote.com/public/upload/520/52d26b4e99c37b609a000001/images/logo/2e8a1c7fe014112ec803716da583e0aa.jpeg" title="Leanote官方博客">
@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://leanote.leanote.com">
+          <a class="navbar-brand" href="javascript:void(0);">
 
             <img src="http://leanote.com/public/upload/520/52d26b4e99c37b609a000001/images/logo/2e8a1c7fe014112ec803716da583e0aa.jpeg" title="Leanote官方博客">
             开源博客系统
@@ -37,13 +37,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><router-link to="/">主页</router-link></li>
-            <li class="">
-              <router-link to="/archives">归档</router-link>
-            </li>
-            <li class="">
-              <router-link to="/tags">标签</router-link>
-            </li>
+            <li  v-for="item in menus" v-bind:key="item.id" @click="selected(item.route)" :class="{active: activePath==item.route}"><router-link :to="item.route">{{item.name}}</router-link></li>
+
           </ul>
           <form class="navbar-form navbar-right" id="search" onsubmit="search(event);return false;">
             <div class="input-group">
@@ -60,10 +55,48 @@
 </template>
 <script>
 import 'bootstrap/dist/js/bootstrap.min.js'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Tarbar',
+  // created 这个钩子在实例被创建之后被调用
   created: function () {
+    // 初始化博客菜单数据,直接调用store/app.js 中 actions为:getMenus 的方法
     this.$store.dispatch('getMenus')
+  },
+  // 属性的使用方式,可以在模板中可以直接使用{{属性名称}} 获取
+  computed: {
+    // 展开getters.js中的数据
+    ...mapGetters([
+      'menus'
+    ])
+  },
+  // 用来做view层的临时变量使用
+  data () {
+    let route = this.$route // 获取路由内容
+    return {
+      activePath: route.path // 初始化默认选中
+    }
+  },
+  // 方法调用的方式,可以在模板中使用时间来调用方法,然会就会执行方法@click="方法名"
+  methods: {
+    /*
+    * 例如
+    getMenus: function () {
+      console.log(this.menus)
+    }
+    */
+    selected: function (getPath) {
+      this.activePath = getPath // 获取当前用户点击的path
+    }
+  },
+  // 模板渲染成功后自动调用,只调用一次,使用router-link 进行跳转的时候不会执行该方法
+  mounted () {
+  },
+  // 页面发生变化会引起一系列的变化会自动调用该函数【监听器】
+  watch: {
+    $route (route) {
+      console.log(route)
+    }
   }
 }
 </script>
