@@ -11,5 +11,16 @@ export default {
       url: 'javascript:history.back(-1);',
       wait: 3
     }
+  },
+  getConfig: () => {
+    // 返回博客配置信息
+    return {
+      code: 0,
+      data: {title: '开源博客系统', content: '知识,博客,分享,协作...', logo: 'https://www.vue-js.com/public/images/vue.png'},
+      msg: '操作成功',
+      url: 'javascript:history.back(-1);',
+      wait: 3
+    }
   }
+
 }

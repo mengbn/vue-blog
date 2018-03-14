@@ -7,15 +7,15 @@
           <a href="javascript:void(0);" id="logo">
 
             <div class="blog-logo">
-              <img src="../../assets/logo.png" title="Leanote官方博客">
+              <img :src="info.logo" :title="info.title">
             </div>
             <div>
-              开源博客系统
+              {{info.title}}
             </div>
           </a>
         </h1>
         <div id="blogDesc">
-          知识, 博客, 分享, 协作...
+          {{info.content}}
         </div>
       </div>
     </div>
@@ -29,9 +29,8 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="javascript:void(0);">
-
-            <img src="../../assets/logo.png" title="Leanote官方博客">
-            开源博客系统
+            <img src="../../assets/logo.png" title="info.title">
+            {{info.title}}
           </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -61,12 +60,15 @@ export default {
   created: function () {
     // 初始化博客菜单数据,直接调用store/app.js 中 actions为:getMenus 的方法
     this.$store.dispatch('getMenus')
+    // 初始化博客信息数据
+    this.$store.dispatch('blogInfo')
   },
   // 属性的使用方式,可以在模板中可以直接使用{{属性名称}} 获取
   computed: {
     // 展开getters.js中的数据
     ...mapGetters([
-      'menus'
+      'menus',
+      'info'
     ])
   },
   // 用来做view层的临时变量使用
@@ -485,7 +487,7 @@ export default {
     font-size: 30px;
     margin-top: 10px;
     font-weight: 400;
-    color: #fff;
+    color: #333333;
     padding: 2px 0;
     letter-spacing: 2px;
     font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -495,7 +497,7 @@ export default {
     padding-bottom: 20px;
     border-bottom: 1px solid #bbbbbb;
     font-size: 18px;
-    color: #fff;
+    color: #cccccc;
     line-height: 1.7em;
   }
   #logo {

@@ -13,6 +13,7 @@ module.exports = {
     expiredays: 3600
   },
   api: {
-    menus: `${APIURL}/menus/index`
+    menus: `${APIURL}/menus/index`,
+    blogSite: `${APIURL}/blog/site`
   }
 }
