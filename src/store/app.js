@@ -1,5 +1,5 @@
 /**
- * 这是一个标准的vuex使用实例方法 on 2018/3/8.
+ * 这是一个标准的vuex使用实例方法,整体项目全局应用 on 2018/3/8.
  */
 import { getMenu } from '@/service/menu' // 引入接口
 const app = {

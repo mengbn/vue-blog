@@ -7,9 +7,8 @@
           <a href="javascript:void(0);" id="logo">
 
             <div class="blog-logo">
-              <img src="http://leanote.com/public/upload/520/52d26b4e99c37b609a000001/images/logo/2e8a1c7fe014112ec803716da583e0aa.jpeg" title="Leanote官方博客">
+              <img src="../../assets/logo.png" title="Leanote官方博客">
             </div>
-
             <div>
               开源博客系统
             </div>
@@ -31,7 +30,7 @@
           </button>
           <a class="navbar-brand" href="javascript:void(0);">
 
-            <img src="http://leanote.com/public/upload/520/52d26b4e99c37b609a000001/images/logo/2e8a1c7fe014112ec803716da583e0aa.jpeg" title="Leanote官方博客">
+            <img src="../../assets/logo.png" title="Leanote官方博客">
             开源博客系统
           </a>
         </div>
@@ -425,7 +424,7 @@ export default {
     -webkit-box-shadow: -1px 1px 6px rgba(0,0,0,0.35);
     -moz-box-shadow: -1px 1px 6px rgba(0,0,0,0.35);
     box-shadow: -1px 1px 6px rgba(0,0,0,0.35);
-    background: url(../../assets/logo.png) top left no-repeat #666666;
+    background: url(../../assets/images/bj.jpg) top left no-repeat #666666;
     background-size: cover;
   }
   #headerContainer {

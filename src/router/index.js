@@ -5,8 +5,10 @@ import Index from '@/views/home/index'
 import Tags from '@/views/home/Tags'
 import Info from '@/views/home/Info'
 Vue.use(Router)
+// 路由采用的是主路由配合子路由实现模块异步加载跳转
 export const RoutersMap = [
   {
+    // 子路由必须要在views层使用 <router-view></router-view> 来输出内容
     path: '/',
     component: HomeLayout,
     redirect: 'blog',

@@ -24,6 +24,11 @@
         <a class="more" href="http://leanote.leanote.com/post/Leanote-Desktop-v2.6-released" title="全文">查看</a>
       </div>
     </div>
+    <ul class="pager">
+      <li class="disabled"><a href="#">上一页</a></li>
+      <li>1/14</li>
+      <li class=""><a href="http://leanote.leanote.com?page=2">下一页</a></li>
+    </ul>
   </div>
     </div>
 </template>
