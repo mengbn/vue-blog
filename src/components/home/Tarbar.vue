@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="javascript:void(0);">
-            <img src="../../assets/logo.png" title="info.title">
+            <img :src="info.logo" title="info.title">
             {{info.title}}
           </a>
         </div>
@@ -56,7 +56,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import { mapGetters } from 'vuex'
 export default {
   name: 'Tarbar',
-  // created 这个钩子在实例被创建之后被调用
+  // created 这个钩子在实例被创建之后被调用,此阶段完成了数据的观测等,但尚未挂载,$el 还不可用,初始化数据的时候用
   created: function () {
     // 初始化博客菜单数据,直接调用store/app.js 中 actions为:getMenus 的方法
     this.$store.dispatch('getMenus')

@@ -7,6 +7,10 @@ const getters = {
   // 全局用来判断用户是否登录
   token: state => state.app.token,
   // 博客初始化数据
-  info: state => state.app.siteInfo
+  info: state => state.app.siteInfo,
+  // 获取文章总页数
+  noteTotal: state => state.notes.total,
+  // 获取文章列表
+  noteList: state => state.notes.lists
 }
 export default getters

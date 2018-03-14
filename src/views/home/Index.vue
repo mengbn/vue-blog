@@ -1,6 +1,7 @@
 <template>
   <div id="postsContainer">
   <div id="posts">
+
     <div class="each-post">
       <div class="title">
         <router-link to="/info">
@@ -23,16 +24,64 @@
         <a class="more" href="http://leanote.leanote.com/post/Leanote-Desktop-v2.6-released" title="全文">查看</a>
       </div>
     </div>
+
   </div>
-    <ul class="pager">
-      <li class="disabled"><a href="#">上一页</a></li>
-      <li>1/14</li>
-      <li class=""><a href="http://leanote.leanote.com?page=2">下一页</a></li>
-    </ul>
+    <div class="block">
+      <el-pagination
+        background
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page.sync="currentPage"
+        :page-size="10"
+        layout="prev, pager, next, jumper"
+        :total="noteTotal">
+      </el-pagination>
     </div>
+  </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'Index'
+  name: 'Index',
+  created: function () {
+    // 获取当前的url地址有没有分页信息
+    this.$store.dispatch('noteList', this.currentPage)
+    // 初始化首页数据
+  },
+  // 属性的使用方式,可以在模板中可以直接使用{{属性名称}} 获取
+  computed: {
+    // 展开getters.js中的数据
+    ...mapGetters([
+      'noteTotal'
+    ])
+  },
+  methods: {
+    handleSizeChange (val) {
+      this.$store.dispatch('noteList', val).then(() => {
+        this.$router.push({path: '/blog', query: {p: val}})
+      })
+    },
+    handleCurrentChange (val) {
+      this.$store.dispatch('noteList', val).then(() => {
+        this.$router.push({path: '/blog', query: {p: val}})
+      })
+    }
+  },
+  data () {
+    // 初始化分页数据并且支持刷新返回当前页面数据
+    let page = 1
+    if (this.$route.query.p) {
+      page = parseInt(this.$route.query.p)
+    }
+    return {
+      currentPage: page
+    }
+  }
 }
 </script>
+<style>
+  .block{
+    padding: 0 15% 0 10%;
+    padding-top: 10px
+  }
+</style>

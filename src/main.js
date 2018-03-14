@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import 'element-ui/lib/theme-chalk/index.css' // 引入UI样式
+import ElementUI from 'element-ui'
 import NProgress from 'nprogress' // 进度条组建
 import 'nprogress/nprogress.css'// 进度条样式
 import App from './App'
@@ -20,6 +21,7 @@ router.afterEach(transition => {
   NProgress.done()
 })
 Vue.config.productionTip = false
+Vue.use(ElementUI)
 /* eslint-disable no-new */
 new Vue({
   router,
