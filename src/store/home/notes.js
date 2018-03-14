@@ -23,7 +23,6 @@ const notes = {
     noteList ({ commit, state }, page) {
       let data = getLists({ 'p': page })
       data.then(function (result) {
-        console.log(result)
         commit('SET_LISTS', result.data)
         commit('SET_TOTAL', result.total)
       })

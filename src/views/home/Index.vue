@@ -2,10 +2,10 @@
   <div id="postsContainer">
   <div id="posts">
 
-    <div class="each-post">
+    <div v-for="items in noteList" v-bind:key="items.id" class="each-post">
       <div class="title">
         <router-link to="/info">
-          Leanote Desktop v2.6 released 蚂蚁笔记桌面端2.6发布
+          {{items.title}}
         </router-link>
       </div>
       <div class="created-time">
@@ -52,21 +52,25 @@ export default {
   computed: {
     // 展开getters.js中的数据
     ...mapGetters([
-      'noteTotal'
+      'noteTotal',
+      'noteList'
     ])
   },
   methods: {
+    // 当用户直接输入跳转页面的时候执行
     handleSizeChange (val) {
       this.$store.dispatch('noteList', val).then(() => {
         this.$router.push({path: '/blog', query: {p: val}})
       })
     },
+    // 当用户点击下一页的时候出发该方法
     handleCurrentChange (val) {
       this.$store.dispatch('noteList', val).then(() => {
         this.$router.push({path: '/blog', query: {p: val}})
       })
     }
   },
+  // 给当前组件赋值所用的所有数据
   data () {
     // 初始化分页数据并且支持刷新返回当前页面数据
     let page = 1
@@ -76,6 +80,10 @@ export default {
     return {
       currentPage: page
     }
+  },
+  // 所有操作完成后执行,并且回到页面最顶部
+  updated () {
+    window.scroll(0, 0)
   }
 }
 </script>

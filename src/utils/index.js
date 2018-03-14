@@ -8,3 +8,11 @@ export default {
   config,
   request
 }
+// 将URL转换成 json 对象好展开使用
+export function param2Obj (url) {
+  const search = url.split('?')[1]
+  if (!search) {
+    return {}
+  }
+  return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+}
