@@ -11,6 +11,8 @@ const getters = {
   // 获取文章总页数
   noteTotal: state => state.notes.total,
   // 获取文章列表
-  noteList: state => state.notes.lists
+  noteList: state => state.notes.lists,
+  // 文章详细内容
+  noteDetail: state => state.notes.detail
 }
 export default getters

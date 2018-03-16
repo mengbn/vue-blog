@@ -2,11 +2,12 @@
  * Created by liumeng on 2018/3/14.
  * 笔记首页列表
  */
-import { getLists } from '@/service/notes' // 引入接口
+import { getLists, getDetail } from '@/service/notes' // 引入接口
 const notes = {
   state: {
     lists: [], // 接口获取的数据
-    total: 0 // 总页数
+    total: 0, // 总页数
+    detail: '' // 获取笔记详情内容
   },
   mutations: {
     // 设置总的数量
@@ -16,6 +17,10 @@ const notes = {
     // 设置lists数据
     SET_LISTS: (state, param) => {
       state.lists = param
+    },
+    // 设置lists数据
+    SET_DETAIL: (state, param) => {
+      state.detail = param
     }
   },
   actions: {
@@ -25,6 +30,14 @@ const notes = {
       data.then(function (result) {
         commit('SET_LISTS', result.data)
         commit('SET_TOTAL', result.total)
+      })
+    },
+    // 获取博客详细内容方法
+    noteDetail ({ commit, state }, id) {
+      let data = getDetail({ 'id': id })
+      data.then(function (result) {
+        console.log(result.data)
+        commit('SET_DETAIL', result.data)
       })
     }
   }

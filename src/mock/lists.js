@@ -30,5 +30,14 @@ export default {
       total: List.length,
       data: pageList
     }
+  },
+  getDetail: config => {
+    return {
+      code: 0,
+      data: { title: '标题内容', content: '知识,博客,分享,协作...' },
+      msg: '操作成功',
+      url: 'javascript:history.back(-1);',
+      wait: 3
+    }
   }
 }

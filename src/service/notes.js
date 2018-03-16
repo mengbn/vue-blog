@@ -5,10 +5,17 @@
 import Index from 'utils'
 const { config, request } = Index
 const { api } = config
-const { notes } = api
+const { notes, notesDetail } = api
 export function getLists (params) {
   return request({
     url: notes,
+    method: 'get',
+    data: params
+  })
+}
+export function getDetail (params) {
+  return request({
+    url: notesDetail,
     method: 'get',
     data: params
   })

@@ -15,6 +15,7 @@ module.exports = {
   api: {
     menus: `${APIURL}/menus/index`,
     blogSite: `${APIURL}/blog/site`,
-    notes: `${APIURL}/blog/note`
+    notes: `${APIURL}/blog/note`,
+    notesDetail: `${APIURL}/blog/detail`
   }
 }

@@ -4,7 +4,7 @@
 
     <div v-for="items in noteList" v-bind:key="items.id" class="each-post">
       <div class="title">
-        <router-link to="/info">
+        <router-link :to="{path:'/info',query:{id:items.id}}">
           {{items.title}}
         </router-link>
       </div>
@@ -18,10 +18,10 @@
         <span class="fa fa-comments-o"></span> 13
       </div>
       <div class="desc">
-        <p>蚂蚁笔记桌面端2.6发布.</p><p>修复的问题:</p><ul><li>富文本编辑器查找替换高亮问题</li><li>启动有可能一直停留在Loading界面问题</li></ul><p>v2.4及以上版本可线上更新</p><p>下载地址:&nbsp;<a href="http://app.leanote.com/" data-mce-href="http://app.leanote.com">http://app.leanote.com</a></p>
+       简单的内容说明可以使用html布局现实代码
       </div>
       <div id="moreContainer">
-        <a class="more" href="http://leanote.leanote.com/post/Leanote-Desktop-v2.6-released" title="全文">查看</a>
+        <a class="more" href="{path:'/info',query:{id:items.id}}" title="全文">查看</a>
       </div>
     </div>
 
