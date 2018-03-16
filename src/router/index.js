@@ -4,6 +4,7 @@ import HomeLayout from '@/components/home/Tarbar'
 import Index from '@/views/home/index'
 import Tags from '@/views/home/Tags'
 import Info from '@/views/home/Info'
+import Login from '@/views/user/login'
 Vue.use(Router)
 // 路由采用的是主路由配合子路由实现模块异步加载跳转
 export const RoutersMap = [
@@ -29,6 +30,10 @@ export const RoutersMap = [
       component: Info,
       name: 'Info'
     }]
+  },
+  {
+    path: '/user/login',
+    component: Login
   }
 ]
 export default new Router({

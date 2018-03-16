@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="voters clearfix" id="likers">
-          <a id="liker_57f8407bab644107bb00b8b3" title="LoranceChen's Blog" href="http://blog.leanote.com/lorance" target="_blank" class="voter">
+          <a id="liker_57f8407bab644107bb00b8b3" title="LoranceChen's Blog" href="javascript:void(0);" target="_blank" class="voter">
             <img alt="avatar" class="avatar-small" src="https://leanote.com/public/upload/619/57f8407bab644107bb00b8b3/images/logo/92e32fac604f6f1b995b8503d68db47f.png">
           </a>
         </div>
@@ -68,9 +68,9 @@
           </div>
         </form>
         <div class="needLogin" id="noLoginContainer">
-          <a onclick="goLogin()">立即登录</a>, 发表评论.
+          <router-link to="/user/login">立即登录</router-link>, 发表评论.
           <br>
-          没有帐号? <a onclick="goRegister()">立即注册</a>
+          没有帐号? <router-link to="/user/register">立即注册</router-link>
         </div>
         <div class="box-header"><span class="counter"><i class="icon icon-comment"></i><span id="commentNum">13</span> 条评论</span></div>
          <ul>

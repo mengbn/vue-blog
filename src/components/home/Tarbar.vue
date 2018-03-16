@@ -497,7 +497,7 @@ export default {
     padding-bottom: 20px;
     border-bottom: 1px solid #bbbbbb;
     font-size: 18px;
-    color: #cccccc;
+    color: #ffffff;
     line-height: 1.7em;
   }
   #logo {
@@ -546,7 +546,7 @@ export default {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 14px;
-    color: #ccc;
+    color: #ffffff;
   }
   .navbar-default .navbar-nav > li > a {
     color: #ddd!important;
