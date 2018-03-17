@@ -13,7 +13,24 @@
       <div class="main">
         <el-tabs v-model="activeName" @tab-click="handleClick">
           <el-tab-pane label="帐号密码登录" name="first">
-            
+            <el-form class="demo-ruleForm">
+              <el-form-item prop="username">
+                <el-input placeholder="用户名"></el-input>
+              </el-form-item>
+              <el-form-item prop="username">
+                <el-input type="password" placeholder="密码" auto-complete="off"></el-input>
+              </el-form-item>
+
+              <el-form-item>
+                <el-checkbox-group >
+                  <el-checkbox v-model="checked" label="下次免登录" name="is_login"></el-checkbox>
+                  <el-button style="float: right" type="text">忘记密码?</el-button>
+                </el-checkbox-group>
+              </el-form-item>
+              <el-form-item>
+                <el-button size="medium" type="primary" :loading="true">登录</el-button>
+              </el-form-item>
+            </el-form>
           </el-tab-pane>
           <el-tab-pane label="扫码登录" name="second">暂未开放</el-tab-pane>
         </el-tabs>
@@ -27,7 +44,8 @@ export default{
   name: 'login',
   data () {
     return {
-      activeName: 'first'
+      activeName: 'first',
+      checked: true
     }
   },
   methods: {
