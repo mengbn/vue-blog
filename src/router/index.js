@@ -5,6 +5,8 @@ import Index from '@/views/home/index'
 import Tags from '@/views/home/Tags'
 import Info from '@/views/home/Info'
 import Login from '@/views/user/login'
+import UserLayout from '@/components/user/Layout'
+import UserIndex from '@/views/user/Index'
 Vue.use(Router)
 // 路由采用的是主路由配合子路由实现模块异步加载跳转
 export const RoutersMap = [
@@ -34,6 +36,16 @@ export const RoutersMap = [
   {
     path: '/user/login',
     component: Login
+  },
+  {
+    path: '/user',
+    component: UserLayout,
+    redirect: '/user/index',
+    children: [{
+      path: '/user/index',
+      component: UserIndex,
+      name: 'Index'
+    }]
   }
 ]
 export default new Router({

@@ -43,7 +43,7 @@
         </el-tabs>
       </div>
     </div>
-    <div class="footer">Copyright @ 2018互联网爱好者出品{{loginToken}}</div>
+    <div class="footer">Copyright @ 2018互联网爱好者出品</div>
   </div>
 </template>
 <script>
