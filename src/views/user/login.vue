@@ -27,7 +27,7 @@
                 </el-checkbox-group>
               </el-form-item>
               <el-form-item>
-                <el-button style="width: 100%;" @click="submitForm('loginForm')" type="primary" >登录</el-button>
+                <el-button style="width: 100%;" @click="submitForm('loginForm')" :loading="loading" type="primary" >登录</el-button>
               </el-form-item>
             </el-form>
           </el-tab-pane>
@@ -43,15 +43,17 @@
         </el-tabs>
       </div>
     </div>
-    <div class="footer">Copyright @ 2018互联网爱好者出品</div>
+    <div class="footer">Copyright @ 2018互联网爱好者出品{{loginToken}}</div>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default{
   name: 'login',
   data () {
     return {
       activeName: 'first', // 初始化Tab选项卡
+      loading: false, // 按钮加载特效
       loginForm: {
         username: '', // 用户名
         password: '', // 密码
@@ -68,6 +70,12 @@ export default{
       }
     }
   },
+  computed: {
+    // 展开getters.js中的数据
+    ...mapGetters([
+      'loginToken'
+    ])
+  },
   methods: {
     // 用户切换Tab
     handleClick (tab, event) {
@@ -78,8 +86,14 @@ export default{
       // form 标签必须要有ref 属性,并且传递的值必须是 ref的值
       this.$refs[formName].validate((valid) => {
         if (valid) {
+          this.loading = true
           // 提交请求接口
-          this.$store.dispatch('comitLogin', this.loginForm)
+          this.$store.dispatch('comitLogin', this.loginForm).then(() => {
+            this.loading = false
+            if (this.loginToken) {
+              this.$router.push({path: '/user/index'})
+            }
+          })
         } else {
           return false
         }

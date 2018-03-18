@@ -3,10 +3,11 @@
  */
 import { getMenu } from '@/service/menu' // 引入接口
 import { getSeting } from '@/service/home' // 引入博客初始化接口
+import { getToken } from '@/utils/auth'
 const app = {
   // state 用来储存数据或者是状态的
   state: {
-    token: '11',
+    token: getToken(),
     menus: [],
     uid: 1,
     siteInfo: ''

@@ -13,6 +13,9 @@ const getters = {
   // 获取文章列表
   noteList: state => state.notes.lists,
   // 文章详细内容
-  noteDetail: state => state.notes.detail
+  noteDetail: state => state.notes.detail,
+
+  loginToken: state => state.login.token
+
 }
 export default getters
