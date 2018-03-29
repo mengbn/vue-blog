@@ -47,7 +47,7 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default{
   name: 'login',
   data () {
@@ -77,6 +77,10 @@ export default{
     ])
   },
   methods: {
+    // 展开store中的所有操作方法就是Action中的方法
+    ...mapActions([
+      'comitLogin'
+    ]),
     // 用户切换Tab
     handleClick (tab, event) {
     // console.log(tab);
@@ -88,12 +92,10 @@ export default{
         if (valid) {
           this.loading = true
           // 提交请求接口
-          this.$store.dispatch('comitLogin', this.loginForm).then(() => {
-            this.loading = false
-            if (this.loginToken) {
-              this.$router.push({path: '/user/index'})
-            }
+          this.comitLogin(this.loginForm).then(() => {
+            this.$router.push({ path: '/' })
           })
+          this.loading = false
         } else {
           return false
         }

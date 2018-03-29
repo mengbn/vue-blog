@@ -17,27 +17,28 @@ const login = {
   },
   actions: {
     comitLogin ({ commit, state }, datas) {
-      let data = userLogin(datas)
-      data.then(function (result) {
-        console.log(result)
-        if (result.code > 0) {
-          Message({
-            message: result.msg,
-            type: 'error',
-            duration: 5 * 1000
-          })
-          return false
-        }
-        // 设置当前用的Token
-        commit('SET_TOKEN', result.data.token)
-        setToken(result.data.token)
-        Message({
-          message: result.msg,
-          type: 'success',
-          duration: 5 * 1000
+      return new Promise((resolve, reject) => {
+        userLogin(datas).then(result => {
+          if (result.code === 0) {
+            // 设置当前用的Token
+            commit('SET_TOKEN', result.data.token)
+            setToken(result.data.token)
+            Message({
+              message: result.msg,
+              type: 'success',
+              duration: 5 * 1000
+            })
+            resolve()
+          } else {
+            Message({
+              message: result.msg,
+              type: 'error',
+              duration: 5 * 1000
+            })
+          }
+        }).catch(error => {
+          reject(error)
         })
-        // 进行路由跳转
-        return true
       })
     }
   }
