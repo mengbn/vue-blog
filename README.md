@@ -31,6 +31,7 @@ npm run build --report
 
 ## 目录介绍
 ```
+
 .
 ├── build
 │   ├── build.js
@@ -84,6 +85,8 @@ npm run build --report
 │       ├── login
 │       └── user
 └── static
+
+
 ```
 
 

@@ -40,10 +40,6 @@ export const RoutersMap = [
     path: '/new',
     component: UserLayout,
     redirect: '/new/notes',
-    meta: {
-      title: '最新笔记',
-      icon: 'newnotes'
-    },
     children: [{
       path: 'notes',
       component: UserIndex,
@@ -54,15 +50,11 @@ export const RoutersMap = [
     path: '/new',
     component: UserLayout,
     redirect: '/new/xmind',
-    meta: {
-      title: '最新脑图',
-      icon: 'xmind'
-    },
     children: [{
       path: 'xmind',
       component: UserIndex,
       name: 'Index_xmind',
-      meta: { title: '最新脑图', icon: 'xmind', noCache: true }
+      meta: { title: '最新脑图', icon: 'newxmind', noCache: true }
     }]
   }, {
     path: '/user',
