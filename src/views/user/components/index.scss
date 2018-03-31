@@ -12,7 +12,7 @@
 	position: relative;
   float: left;
   border:1px solid #ededed;
-  height:100%;
+  height:calc(100% - 165px);
 	:focus {
 		outline: 0;
 	}
@@ -43,7 +43,7 @@
 		z-index: 2;
 		border-top: 1px solid #e6e6e6;
     overflow-x: hidden;
-    height:500px;
+    height:100%;
 	}
 	.toggle-all {
 		text-align: center;
