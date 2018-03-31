@@ -14,8 +14,10 @@ const getters = {
   noteList: state => state.notes.lists,
   // 文章详细内容
   noteDetail: state => state.notes.detail,
-
-  loginToken: state => state.login.token
-
+  loginToken: state => state.login.token,
+  sidebar: state => state.users.sidebar,
+  permission_routers: state => state.users.menuRouters,
+  visitedViews: state => state.tagsView.visitedViews,
+  cachedViews: state => state.tagsView.cachedViews
 }
 export default getters

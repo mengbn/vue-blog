@@ -17,6 +17,7 @@ const login = {
   },
   actions: {
     comitLogin ({ commit, state }, datas) {
+      // 使用ec6语法中的 promise 进行链式操作
       return new Promise((resolve, reject) => {
         userLogin(datas).then(result => {
           if (result.code === 0) {
@@ -28,6 +29,7 @@ const login = {
               type: 'success',
               duration: 5 * 1000
             })
+            // 成功返回 resolve() ,然后可以使用.then 获取结果
             resolve()
           } else {
             Message({
@@ -37,6 +39,7 @@ const login = {
             })
           }
         }).catch(error => {
+          // 失败返回 reject(),则.then中的代码不会被执行
           reject(error)
         })
       })

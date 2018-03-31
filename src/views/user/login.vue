@@ -93,7 +93,7 @@ export default{
           this.loading = true
           // 提交请求接口
           this.comitLogin(this.loginForm).then(() => {
-            this.$router.push({ path: '/' })
+            this.$router.push({ path: '/user' })
           })
           this.loading = false
         } else {

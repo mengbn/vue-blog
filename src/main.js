@@ -10,6 +10,7 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import store from './store' // 引入vuex 的模型层
+import './icons' // icon
 import './mock' // 模拟接口,打包产品的时候可以去掉
 // 路由前置操作
 router.beforeEach((to, from, next) => {

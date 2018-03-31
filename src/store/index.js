@@ -6,6 +6,8 @@ import Vuex from 'vuex'
 import app from './app' // 引入应用初始化 store
 import notes from './home/notes' // 引入应用初始化 store
 import login from './user/login' // 引入应用初始化 store
+import users from './user/users' // 引入应用初始化 store
+import tagsView from './user/tagsView' // 引入应用初始化 store
 import getters from './getters' // 引入公共的state 数据
 Vue.use(Vuex)
 const store = new Vuex.Store({
@@ -13,7 +15,9 @@ const store = new Vuex.Store({
   modules: {
     app,
     notes,
-    login
+    login,
+    users,
+    tagsView
   },
   getters // 追加到 vuex中去可以使用 ...mapGetters([]) 进行展开
 })
