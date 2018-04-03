@@ -57,7 +57,7 @@ export default{
 </script>
 <style lang="scss">
   .note-container{
-    height: 100%;
-    float: left;
+    height:100%;
+    width:100%;
   }
 </style>
