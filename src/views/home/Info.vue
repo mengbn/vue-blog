@@ -76,17 +76,17 @@
          <ul>
           <li class="comment-item">
             <!-- 头像 -->
-            <a ui-hovercard="" target="_blank" class="avatar-link" title="kybetter" href="http://cook.leanote.com">
+            <a ui-hovercard="" target="_blank" class="avatar-link" title="kybetter" href="javascript:void(0);">
               <img class="avatar" src="https://leanote.com/public/upload/582/56496cd6ab64416568000cbc/images/logo/afa4b5af8bd34acee076a7c6eac3c0b0.jpg">
             </a>
             <!-- 评论 -->
             <div class="comment-body">
               <div class="comment-hd">
-                <a href="http://cook.leanote.com" target="_blank">kybetter</a>
+                <a href="#" target="_blank">kybetter</a>
                 <!-- 回复其它人 -->
               </div>
               <div class="comment-content ng-binding" ng-bind-html="comment.content">
-                leanote的服务端在使用go语言开发过程中体验怎么样？与java、node、python和php这几个相比，有什么不一样的地方？
+                哈哈怎么样啊
               </div>
               <div class="comment-ft clearfix" data-comment-id="5a29f639ab644138c4000c13">
                 <span title="" ui-time="" class="date">2 month ago </span>

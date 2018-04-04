@@ -21,7 +21,7 @@
        简单的内容说明可以使用html布局现实代码
       </div>
       <div id="moreContainer">
-        <a class="more" href="{path:'/info',query:{id:items.id}}" title="全文">查看</a>
+        <router-link class="more" :to="{path:'/info',query:{id:items.id}}">查看</router-link>
       </div>
     </div>
 
