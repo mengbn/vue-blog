@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
 import { RoutersMap } from '@/router'
 const users = {
+  namespaced: true,
   state: {
     sidebar: {
       opened: !+Cookies.get('sidebarStatus')

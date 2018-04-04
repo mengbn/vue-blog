@@ -7,6 +7,7 @@ import { userLogin } from '@/service/user' // 引入接口
 import { Message } from 'element-ui'
 import { getToken, setToken } from '@/utils/auth'
 const login = {
+  namespaced: true, // 增加命名空间
   state: {
     token: getToken()
   },

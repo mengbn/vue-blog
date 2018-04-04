@@ -78,9 +78,9 @@ export default{
   },
   methods: {
     // 展开store中的所有操作方法就是Action中的方法
-    ...mapActions([
-      'comitLogin'
-    ]),
+    ...mapActions({
+      comitLogin: 'login/comitLogin'
+    }),
     // 用户切换Tab
     handleClick (tab, event) {
     // console.log(tab);

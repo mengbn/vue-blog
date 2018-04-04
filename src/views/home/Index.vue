@@ -45,7 +45,7 @@ export default {
   name: 'Index',
   created: function () {
     // 获取当前的url地址有没有分页信息
-    this.$store.dispatch('noteList', this.currentPage)
+    this.$store.dispatch('notes/noteList', this.currentPage)
     // 初始化首页数据
   },
   // 属性的使用方式,可以在模板中可以直接使用{{属性名称}} 获取
@@ -59,13 +59,13 @@ export default {
   methods: {
     // 当用户直接输入跳转页面的时候执行
     handleSizeChange (val) {
-      this.$store.dispatch('noteList', val).then(() => {
+      this.$store.dispatch('notes/noteList', val).then(() => {
         this.$router.push({path: '/blog', query: {p: val}})
       })
     },
     // 当用户点击下一页的时候出发该方法
     handleCurrentChange (val) {
-      this.$store.dispatch('noteList', val).then(() => {
+      this.$store.dispatch('notes/noteList', val).then(() => {
         this.$router.push({path: '/blog', query: {p: val}})
       })
     }

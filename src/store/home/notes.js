@@ -4,6 +4,7 @@
  */
 import { getLists, getDetail } from '@/service/notes' // 引入接口
 const notes = {
+  namespaced: true, // 增加命名空间
   state: {
     lists: [], // 接口获取的数据
     total: 0, // 总页数
