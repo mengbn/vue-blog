@@ -1,6 +1,7 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
     <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
+    <Search></Search>
     <div class="right-menu">
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
@@ -30,10 +31,12 @@
 import { mapGetters } from 'vuex'
 import Hamburger from '@/components/Hamburger'
 import Screenfull from '@/components/Screenfull'
+import Search from './Search.vue'
 export default {
   components: {
     Hamburger,
-    Screenfull
+    Screenfull,
+    Search
   },
   computed: {
     ...mapGetters([
@@ -44,7 +47,7 @@ export default {
   },
   methods: {
     toggleSideBar () {
-      this.$store.dispatch('toggleSideBar')
+      this.$store.dispatch('users/toggleSideBar')
     },
     logout () {
       this.$store.dispatch('LogOut').then(() => {
@@ -81,9 +84,6 @@ export default {
     .right-menu-item {
       display: inline-block;
       margin: 0 8px;
-    }
-    .screenfull {
-      height: 20px;
     }
     .international{
       vertical-align: top;

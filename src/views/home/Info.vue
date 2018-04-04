@@ -115,7 +115,7 @@ export default {
   created: function () {
     // 获取当前的id并且传递过去
     let id = this.$route.query.id
-    this.$store.dispatch('noteDetail', id)
+    this.$store.dispatch('notes/noteDetail', id)
   },
   computed: {
     // 展开getters.js中的数据

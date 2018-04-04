@@ -58,6 +58,7 @@ export const RoutersMap = [
     }]
   }, {
     path: '/user',
+    redirect: '/user/index',
     component: UserLayout,
     meta: {
       title: '我的笔记',
