@@ -11,8 +11,18 @@
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/">
+          <el-dropdown-item>
+            博客首页
+          </el-dropdown-item>
+        </router-link>
+          <router-link to="/">
             <el-dropdown-item>
-              首页
+              管理博客
+            </el-dropdown-item>
+          </router-link>
+          <router-link to="/">
+            <el-dropdown-item>
+              个人中心
             </el-dropdown-item>
           </router-link>
           <a target='_blank' href="https://github.com/mengbn/vue-blog/">

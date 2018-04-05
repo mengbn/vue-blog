@@ -1,6 +1,6 @@
 <template>
   <div class="note-container">
-    <el-input placeholder="请输入内容"> </el-input>
+    <el-input placeholder="请输入标题"> </el-input>
     <mavon-editor :toolbars="toolbar" style="height: 100%"></mavon-editor>
   </div>
 </template>
