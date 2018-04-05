@@ -1,9 +1,7 @@
 <template>
   <div class="note-container">
-    <div class="title">笔记标题</div>
-    <div class="contents">
-      <mavon-editor :toolbars="toolbar" style="height: 100%"></mavon-editor>
-    </div>
+    <el-input placeholder="请输入内容"> </el-input>
+    <mavon-editor :toolbars="toolbar" style="height: 100%"></mavon-editor>
   </div>
 </template>
 <script>
@@ -56,8 +54,5 @@ export default{
 }
 </script>
 <style lang="scss">
-  .note-container{
-    height:100%;
-    width:100%;
-  }
+  @import './notesDetail.scss';
 </style>

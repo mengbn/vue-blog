@@ -4,7 +4,7 @@
     :fetch-suggestions="querySearchAsync"
     placeholder="搜索...."
     @select="handleSelect"
-    prefix-icon="el-icon-zoom-in"
+    prefix-icon="el-icon-search"
   ></el-autocomplete>
 </template>
 

@@ -2,6 +2,7 @@
   <el-menu class="navbar" mode="horizontal">
     <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
     <Search></Search>
+    <add-notes></add-notes>
     <div class="right-menu">
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
@@ -32,11 +33,13 @@ import { mapGetters } from 'vuex'
 import Hamburger from '@/components/Hamburger'
 import Screenfull from '@/components/Screenfull'
 import Search from './Search.vue'
+import AddNotes from './AddNotes.vue'
 export default {
   components: {
     Hamburger,
     Screenfull,
-    Search
+    Search,
+    AddNotes
   },
   computed: {
     ...mapGetters([
