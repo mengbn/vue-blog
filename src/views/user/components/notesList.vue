@@ -26,7 +26,10 @@
 </template>
 <script>
 export default{
-  name: 'notesList'
+  name: 'notesList',
+  created: function () {
+    console.log(1)
+  }
 }
 </script>
 <style lang="scss">
